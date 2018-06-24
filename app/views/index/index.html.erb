@@ -1,0 +1,28 @@
+<h5>Import Cyclic BIlling Report</h5>
+<div id="loader">
+  <%= image_tag 'loader' %>
+</div>
+    <%= form_tag import_index_index_path, id: 'form', multipart: true do %>
+      <%= file_field_tag :file, required: true %>
+      <%= submit_tag "Import CSV", onclick: 'loader();' %>
+<% end %>
+
+<h2>Accounts</h2>
+<table class="striped">
+  <thead>
+    <th>Account</th>
+    <th>Amount</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.dep_acc %></td>
+        <td><%= account.amount %></td>
+        <td><%= account.phone %></td>
+        <td><%= account.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

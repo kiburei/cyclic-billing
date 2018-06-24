@@ -14,3 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require materialize
+
+function loader() {
+  document.getElementById('loader').style.display = 'block';
+  document.getElementById('form').style.display = 'none';
+}
