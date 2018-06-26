@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 gem 'materialize-sass', '~> 1.0.0.rc1'
 
+gem 'devise'
+
 gem 'material_icons'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'

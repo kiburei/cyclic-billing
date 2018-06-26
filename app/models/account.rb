@@ -11,4 +11,15 @@ class Account < ApplicationRecord
      end
  end
 
+ def self.to_csv
+    attributes = %w{dep_acc amount phone email}
+
+    CSV.generate(headers: true) do |csv|
+          csv << attributes
+          all.each do |cbs_mobile|
+            csv << attributes.map{ |attr| cbs_mobile.send(attr) }
+          end
+        end
+end
+
 end
