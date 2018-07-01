@@ -4,7 +4,7 @@
 </div>
     <%= form_tag import_index_index_path, id: 'form', multipart: true do %>
       <%= file_field_tag :file, required: true %>
-      <%= submit_tag "Import CSV", onclick: 'loader();' %>
+      <%= submit_tag "Import CSV", onclick: 'loader();', class: "btn blue" %>
 <% end %>
 
 <h2>Accounts</h2>
