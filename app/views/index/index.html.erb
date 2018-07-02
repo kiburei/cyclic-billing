@@ -6,7 +6,11 @@
       <%= file_field_tag :file, required: true %>
       <%= submit_tag "Import CSV", onclick: 'loader();', class: "btn blue" %>
 <% end %>
-
+<div class="tabs">
+  <% @dates.each do |date| %>
+    <%= link_to date, root_url, class: 'btn green' %>
+  <% end %>
+</div>
 <h2>Accounts Report</h2>
 <%= link_to "Download", export_path, class: "btn blue", style: "color: white;" %>
 <table class="striped">

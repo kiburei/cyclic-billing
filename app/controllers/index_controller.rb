@@ -2,6 +2,7 @@ class IndexController < ApplicationController
 
   def index
     @accounts = Account.all
+    @dates = Account.distinct.pluck(:Date).uniq
   end
 
   def import
