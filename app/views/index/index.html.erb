@@ -15,6 +15,8 @@
     <th>Amount</th>
     <th>Phone Number</th>
     <th>Email</th>
+    <th>Bach no</th>
+    <th>Date</th>
   </thead>
   <tbody>
     <% @accounts.each do |account| %>
@@ -23,6 +25,8 @@
         <td><%= account.amount %></td>
         <td><%= account.phone %></td>
         <td><%= account.email %></td>
+        <td><%= account.bach_no %></td>
+        <td><%= account.Date %></td>
       </tr>
     <% end %>
   </tbody>
