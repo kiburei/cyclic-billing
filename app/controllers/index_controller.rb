@@ -1,7 +1,11 @@
 class IndexController < ApplicationController
 
   def index
-    @accounts = Account.all
+    if params[:year] != nil
+      @accounts = Account.where(Date: params[:year])
+    else
+      @accounts = Account.all
+    end
     @dates = Account.distinct.pluck(:Date).uniq
   end
 
@@ -16,5 +20,6 @@ class IndexController < ApplicationController
       format.csv { send_data @accounts.to_csv, filename: "Core Banking Unreconciled Records.csv" }
     end
   end
+
 
 end

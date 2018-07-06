@@ -6,9 +6,11 @@
       <%= file_field_tag :file, required: true %>
       <%= submit_tag "Import CSV", onclick: 'loader();', class: "btn blue" %>
 <% end %>
-<div class="tabs">
-  <% @dates.each do |date| %>
-    <%= link_to date, root_url, class: 'btn green' %>
+<div class="filter">
+  <h4>Filter Records By Date</h4>
+  <%= form_tag root_path, method: :get, multipart: true do %>
+    <%= select_tag 'year', options_for_select([["Select Date"]] + @dates), class: "browser-default" %>
+    <%= submit_tag "Filter By Date", class: "btn blue" %>
   <% end %>
 </div>
 <h2>Accounts Report</h2>
